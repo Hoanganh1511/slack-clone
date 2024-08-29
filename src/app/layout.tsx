@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${open_sans.className} bg-[#f0f4f9]`}>
+      <body className={`${open_sans.className} bg-[#f4f2ee]`}>
         <Toaster theme="light" position="top-center" />
         {children}
       </body>
