@@ -17,7 +17,11 @@ const config = {
         "2xl": "1400px",
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#0a66c2",
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 
-const open_sans = Open_Sans({ subsets: ["latin"] });
+const open_sans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
