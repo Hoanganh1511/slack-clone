@@ -18,11 +18,15 @@ const LeftSide = () => {
             />
           </div>
           <div className="relative">
-            <div className="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 flex items-center justify-center w-[64px] h-[64px] rounded-full bg-green-500 border-[2px] border-white">
-              <span className="text-white">TA</span>
-            </div>
+            <Link href="/profile" className="cursor-pointer">
+              <div className="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 flex items-center justify-center w-[64px] h-[64px] rounded-full bg-green-500 border-[2px] border-white hover:brightness-90 duration-100">
+                <span className="text-white">TA</span>
+              </div>
+            </Link>
             <div className="pt-[44px] pb-[16px] flex flex-col items-center justify-center">
-              <span className="font-semibold">Tuan Anh Hoang</span>
+              <Link href="/" className="font-semibold hover:underline">
+                Tuan Anh Hoang
+              </Link>
               <span className="text-center text-[12px] text-black/70">
                 Software Engineer at VTC Intecom
               </span>
