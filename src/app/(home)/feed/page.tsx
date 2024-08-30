@@ -1,7 +1,7 @@
-import React from "react";
+import FeedContainer from "@/container/feed/feed-container";
 
-const page = () => {
-  return <div>feed page</div>;
+const FeedPage = () => {
+  return <FeedContainer />;
 };
 
-export default page;
+export default FeedPage;
