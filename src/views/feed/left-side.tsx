@@ -3,9 +3,11 @@ import Link from "next/link";
 import { RiVipDiamondFill } from "react-icons/ri";
 import { FaBookmark } from "react-icons/fa6";
 import { HiUserGroup } from "react-icons/hi";
+import { LuPlus } from "react-icons/lu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const LeftSide = () => {
   return (
-    <div className="">
+    <>
       <div className="bg-white rounded-[8px] border-[1px] border-black/15">
         {/* Cover, Avatar & Information */}
         <div>
@@ -19,9 +21,15 @@ const LeftSide = () => {
           </div>
           <div className="relative">
             <Link href="/profile" className="cursor-pointer">
-              <div className="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 flex items-center justify-center w-[64px] h-[64px] rounded-full bg-green-500 border-[2px] border-white hover:brightness-90 duration-100">
-                <span className="text-white">TA</span>
-              </div>
+              <Avatar className="w-[74px] h-[74px] absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 flex items-center justify-center rounded-full hover:brightness-90 duration-100">
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback className="bg-green-500 text-white">
+                  TA
+                </AvatarFallback>
+              </Avatar>
             </Link>
             <div className="pt-[44px] pb-[16px] flex flex-col items-center justify-center">
               <Link href="/" className="font-semibold hover:underline">
@@ -85,9 +93,9 @@ const LeftSide = () => {
         <div>{/* Get Premium */}</div>
         <div>{/* Saved Items */}</div>
       </div>
-      <div className="mt-4 bg-white rounded-[8px] border-[1px] border-black/15">
+      <div className="mt-4 py-[12px] bg-white rounded-[8px] border-[1px] border-black/15">
         {/* Cover, Avatar & Information */}
-        <div className="block py-[12px]">
+        <div className="block ">
           <div className="pl-[12px] text-[12px] text-black/60 font-semibold">
             <span>Recent</span>
           </div>
@@ -95,7 +103,7 @@ const LeftSide = () => {
             href="#"
             className="group mt-[5px] px-[12px] py-[4px] flex items-center hover:bg-black/5"
           >
-            <HiUserGroup className="text-black/60 mr-[5px]" />
+            <HiUserGroup className="text-black/60 mr-[8px]" />
             <div className="pt-[3px] text-[12px] text-black font-semibold text-black/70 group-hover:font-bold group-hover:text-black">
               <span>Next.js</span>
             </div>
@@ -104,54 +112,75 @@ const LeftSide = () => {
             href="#"
             className="group px-[12px] py-[4px] flex items-center hover:bg-black/5 "
           >
-            <HiUserGroup className="text-black/60 mr-[5px]" />
+            <HiUserGroup className="text-black/60 mr-[8px]" />
             <div className="pt-[3px] text-[12px] text-black font-semibold text-black/70 group-hover:font-bold group-hover:text-black">
               <span>JavaScript</span>
             </div>
           </Link>
         </div>
-        <div className="border-t-[1px] border-black/15">
-          <div className="block py-[12px]">
+        <div className="block mt-4">
+          <Link
+            href="/groups"
+            className="block pl-[12px] text-[12px] text-[#0a66c2] font-bold hover:underline"
+          >
+            <h2>Groups</h2>
+          </Link>
+          <Link
+            href="#"
+            className="group mt-[5px] px-[12px] py-[4px] flex items-center hover:bg-black/5"
+          >
+            <HiUserGroup className="text-black/60 mr-[8px]" />
+            <div className="pt-[3px] text-[12px] text-black font-semibold text-black/70 group-hover:font-bold group-hover:text-black">
+              <span>Next.js</span>
+            </div>
+          </Link>
+          <Link
+            href="#"
+            className="group px-[12px] py-[4px] flex items-center hover:bg-black/5"
+          >
+            <HiUserGroup className="text-black/60 mr-[8px]" />
+            <div className="pt-[3px] text-[12px] text-black font-semibold text-black/70 group-hover:font-bold group-hover:text-black">
+              <span>JavaScript</span>
+            </div>
+          </Link>
+          <Link
+            href="#"
+            className="group pl-[36px] pr-[12px] py-[4px] flex items-center hover:bg-black/5"
+          >
+            <div className="pt-[3px] text-[12px] text-black font-semibold text-black/70 group-hover:font-bold group-hover:text-black">
+              <span>See all</span>
+            </div>
+          </Link>
+        </div>
+        {/* Connects */}
+        <div className="mt-3">
+          <div className="flex items-center justify-between px-[12px] py-[4px]">
+            <h2 className="flex-1">
+              {" "}
+              <Link
+                href="/groups"
+                className="block text-[12px] text-[#0a66c2] font-bold hover:underline"
+              >
+                Events{" "}
+              </Link>
+            </h2>
+
+            <button className="size-[32px] flex items-center justify-center rounded-full hover:bg-black/5">
+              <LuPlus className="size-[16px]" />
+            </button>
+          </div>
+          <div className="flex items-center justify-between px-[12px] py-[4px]">
             <Link
               href="/groups"
-              className="pl-[12px] text-[12px] text-[#0a66c2] font-bold hover:underline"
+              className="block flex-1 text-[12px] text-[#0a66c2] font-bold hover:underline"
             >
-              <span>Groups</span>
-            </Link>
-            <Link
-              href="#"
-              className="group mt-[5px] px-[12px] py-[4px] flex items-center hover:bg-black/5"
-            >
-              <HiUserGroup className="text-black/60 mr-[5px]" />
-              <div className="pt-[3px] text-[12px] text-black font-semibold text-black/70 group-hover:font-bold group-hover:text-black">
-                <span>Next.js</span>
-              </div>
-            </Link>
-            <Link
-              href="#"
-              className="group px-[12px] py-[4px] flex items-center hover:bg-black/5"
-            >
-              <HiUserGroup className="text-black/60 mr-[5px]" />
-              <div className="pt-[3px] text-[12px] text-black font-semibold text-black/70 group-hover:font-bold group-hover:text-black">
-                <span>JavaScript</span>
-              </div>
-            </Link>
-            <Link
-              href="#"
-              className="group block pl-[36px] pr-[12px] py-[4px] flex items-center hover:bg-black/5"
-            >
-              <div className="pt-[3px] text-[12px] text-black font-semibold text-black/70 group-hover:font-bold group-hover:text-black">
-                <span>See all</span>
-              </div>
+              <h2>Followed Hashtags</h2>
             </Link>
           </div>
         </div>
-        {/* Connects */}
-        <div className=""></div>
-        <div>{/* Get Premium */}</div>
         <div>{/* Saved Items */}</div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 const navData = () => {
   return [
     {
@@ -83,11 +84,17 @@ const Navigation = () => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <div className="group min-w-[80px] flex flex-col items-center justify-center pt-[2px] cursor-pointer">
-                <div className="w-[24px] h-[24px] flex items-center justify-center rounded-full bg-green-500">
-                  <span className="font-semibold text-white text-[11px]">
-                    TA
-                  </span>
-                </div>
+                <Link href="/profile" className="cursor-pointer">
+                  <Avatar className="w-[24px] h-[24px]">
+                    <AvatarImage
+                      src="https://github.com/shadcn.png"
+                      alt="@shadcn"
+                    />
+                    <AvatarFallback className="bg-green-500 text-white">
+                      TA
+                    </AvatarFallback>
+                  </Avatar>
+                </Link>
                 <span className="flex  items-center text-[12px] text-black/65 group-hover:text-black">
                   Me <FaCaretDown className="" />
                 </span>
@@ -122,16 +129,11 @@ const Navigation = () => {
                   </Link>
                 </div>
               </div>
-              {/* <hr />
-              <div className="p-3">
-                <div>
-                  <span className="">Account</span>
-                </div>
-              </div> */}
+
               <DropdownMenuSeparator />
-              <DropdownMenuGroup>
+              {/* <DropdownMenuGroup>
                 <DropdownMenuItem>hehe</DropdownMenuItem>
-              </DropdownMenuGroup>
+              </DropdownMenuGroup> */}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

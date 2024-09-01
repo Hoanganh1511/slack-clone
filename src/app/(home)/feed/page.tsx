@@ -5,8 +5,8 @@ import RightSide from "@/views/feed/right-side";
 
 const FeedPage = () => {
   return (
-    <Container>
-      <div className="h-[1000px] grid grid-cols-12 gap-x-6">
+    <div className="container">
+      <div className="h-[1000px] pt-[20px] grid grid-cols-12 gap-x-[24px]">
         <div className="col-span-3">
           <LeftSide />
         </div>
@@ -17,7 +17,7 @@ const FeedPage = () => {
           <RightSide />
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

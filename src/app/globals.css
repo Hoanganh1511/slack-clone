@@ -28,3 +28,93 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.upload-file-btn {
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.upload-file-btn::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+/* Basic editor styles */
+.tiptap-parent {
+  /* List styles */
+  /* Heading styles */
+  /* Code and preformatted text styles */
+}
+.tiptap-parent :first-child {
+  margin-top: 0;
+}
+.tiptap-parent ul,
+.tiptap-parent ol {
+  padding: 0 1rem;
+  margin: 1.25rem 1rem 1.25rem 0.4rem;
+}
+.tiptap-parent ul li p,
+.tiptap-parent ol li p {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+.tiptap-parent h1,
+.tiptap-parent h2,
+.tiptap-parent h3,
+.tiptap-parent h4,
+.tiptap-parent h5,
+.tiptap-parent h6 {
+  line-height: 1.1;
+  margin-top: 2.5rem;
+  text-wrap: pretty;
+}
+.tiptap-parent h1,
+.tiptap-parent h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+.tiptap-parent h1 {
+  font-size: 1.4rem;
+}
+.tiptap-parent h2 {
+  font-size: 1.2rem;
+}
+.tiptap-parent h3 {
+  font-size: 1.1rem;
+}
+.tiptap-parent h4,
+.tiptap-parent h5,
+.tiptap-parent h6 {
+  font-size: 1rem;
+}
+.tiptap-parent code {
+  background-color: var(--purple-light);
+  border-radius: 0.4rem;
+  color: var(--black);
+  font-size: 0.85rem;
+  padding: 0.25em 0.3em;
+}
+.tiptap-parent pre {
+  background: var(--black);
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-family: "JetBrainsMono", monospace;
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+}
+.tiptap-parent pre code {
+  background: none;
+  color: inherit;
+  font-size: 0.8rem;
+  padding: 0;
+}
+.tiptap-parent blockquote {
+  border-left: 3px solid var(--gray-3);
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+}
+.tiptap-parent hr {
+  border: none;
+  border-top: 1px solid var(--gray-2);
+  margin: 2rem 0;
+}
