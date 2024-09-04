@@ -23,5 +23,6 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Features
 
 - Self Build Rich Text Editor Article
+- Integrate Microsoft Designer
 
 ## Deploy on Vercel

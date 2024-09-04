@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import ModalShareMedia from "@/components/modals/modal-share-media";
 import ModalCreateEvent from "@/components/modals/modal-create-event";
 import Link from "next/link";
+import ArticlesSection from "./articles-section";
 
 const ShareBox = () => {
   return (
@@ -36,10 +37,7 @@ const ShareBox = () => {
       </div>
       {/*  */}
       <div className="my-[5px]">
-        <div
-          className="flex items-center justify-around
-        "
-        >
+        <div className="flex items-center justify-around">
           <Dialog>
             <DialogTrigger asChild>
               <div className="group flex items-center py-[12px] px-[10px] rounded-[6px] hover:bg-black/5 cursor-pointer">
@@ -71,7 +69,7 @@ const ShareBox = () => {
             <div className="group flex items-center py-[12px]  px-[10px] rounded-[6px] hover:bg-black/5 cursor-pointer">
               <MdNewspaper className="text-[#e06847]  size-[18px]" />
               <div className="ml-[6px]  text-[14px] font-semibold text-black/60 group-hover:text-black/80 duration-100">
-                <span>Calendar</span>
+                <span>Write article</span>
               </div>
             </div>
           </Link>

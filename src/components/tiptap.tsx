@@ -1,11 +1,16 @@
 "use client";
+import Image from "next/image";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import Placeholder from "@tiptap/extension-placeholder";
+import Heading from "@tiptap/extension-heading";
+import Text from "@tiptap/extension-text";
 import Toolbar from "./toolbar";
 import Underline from "@tiptap/extension-underline";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { FaCaretDown } from "react-icons/fa6";
+import { HiOutlinePaintBrush } from "react-icons/hi2";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,6 +27,7 @@ import {
 } from "./ui/dropdown-menu";
 
 import { Button } from "./ui/button";
+import { MdOutlineFileUpload } from "react-icons/md";
 import { FaArrowRightLong } from "react-icons/fa6";
 import {
   Cloud,
@@ -44,13 +50,34 @@ const Tiptap = ({ onChange, content }: any) => {
     onChange(newContent);
   };
   const editor = useEditor({
-    extensions: [StarterKit, Underline],
+    extensions: [
+      StarterKit,
+      Underline,
+      Placeholder.configure({
+        placeholder: ({ node }) => {
+          if (node.type.name === "heading") {
+            return "Title";
+          }
+
+          return "Default placeholder";
+        },
+      }),
+      Text,
+      Heading.configure({
+        levels: [1, 2, 3],
+      }),
+    ],
     editorProps: {
       attributes: {
         class:
-          "flex flex-col px-4 py-3 justify-start border-b border-r border-l border-gray-700 text-gray-400 items-start w-full gap-3 font-medium text-[16px] pt-4 rounded-bl-md rounded-br-md outline-none",
+          "flex flex-col px-4 py-3 justify-start border-gray-700 text-black/60 items-start w-full gap-3 font-regular text-[16px] pt-8 rounded-md outline-none bg-white",
       },
     },
+    content: `
+    <h1>Title</h1>
+    <p>Write here. You can also include @mentions</p>
+  `,
+
     onUpdate: ({ editor }) => {
       handleChange(editor.getHTML());
     },
@@ -117,9 +144,6 @@ const Tiptap = ({ onChange, content }: any) => {
             </div>
 
             <DropdownMenuSeparator />
-            {/* <DropdownMenuGroup>
-                <DropdownMenuItem>hehe</DropdownMenuItem>
-              </DropdownMenuGroup> */}
           </DropdownMenuContent>
         </DropdownMenu>
         <Toolbar editor={editor} content={content} />
@@ -222,7 +246,51 @@ const Tiptap = ({ onChange, content }: any) => {
           </Button>
         </div>
       </div>
-      {/* <EditorContent style={{ whiteSpace: "pre-line" }} editor={editor} /> */}
+      <div className="mt-3 border-t-[1px] border-t-black/10 pt-5 max-w-[720px] mx-auto">
+        <div className="relative w-full h-[300px] bg-black/5 border-[1px] border-black/10 flex  items-center justify-center">
+          <div>
+            <Image
+              src="/images/camera-logo.png"
+              alt="upload image logo"
+              width={80}
+              height={80}
+              className="block mx-auto"
+            />
+
+            <p className="my-3 text-center text-[13px] text-black/65">
+              We recommend uploading or dragging in an image that is 1920x1080
+              pixels
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-4">
+              <Button
+                variant="destructive"
+                size="sm"
+                className="bg-transparent rounded-full hover:outline hover:outline-[2px] hover:outline-black/70"
+              >
+                <div className="flex items-center">
+                  <MdOutlineFileUpload className="mr-2 size-[20px]" />
+                  <span className="font-semibold">Upload from computer</span>
+                </div>
+              </Button>{" "}
+              <Button
+                variant="destructive"
+                size="sm"
+                className="bg-transparent rounded-full hover:outline hover:outline-[2px] hover:outline-black/70 "
+              >
+                <div className="flex items-center">
+                  <HiOutlinePaintBrush className="mr-2 size-[20px]" />
+                  <span className="font-semibold">Create a design</span>
+                </div>
+              </Button>
+            </div>
+          </div>
+        </div>
+        <EditorContent
+          className="editor-tiptap"
+          style={{ whiteSpace: "pre-line" }}
+          editor={editor}
+        />
+      </div>
     </div>
   );
 };

@@ -7,7 +7,9 @@ import {
   Italic,
   List,
   ListOrdered,
+  Heading1,
   Heading2,
+  Heading3,
   Underline,
   Quote,
   Undo,
@@ -25,7 +27,7 @@ const Toolbar = ({ editor, content }: Props) => {
   }
   return (
     <div
-      className="w-fit  px-8 py-[5px] bg-black/5 flex justify-between items-start
+      className="tiptap-parent w-fit  px-8 py-[5px] bg-black/5 flex justify-between items-start
 gap-5 flex-wrap rounded-[25px]"
     >
       <div className="flex justify-start items-center gap-2 w-full flex-wrap">
@@ -84,18 +86,44 @@ gap-5 flex-wrap rounded-[25px]"
           <Strikethrough className="w-5 h-5" />
         </button>
         <button
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 1 }).run()
+          }
+          className={cn(
+            "p-2 rounded-lg",
+            editor.isActive("heading", { level: 1 })
+              ? "bg-sky-700 text-white"
+              : "text-black/60"
+          )}
+        >
+          <Heading1 className="w-5 h-5" />
+        </button>
+        <button
           onClick={(e) => {
             e.preventDefault();
             editor.chain().focus().toggleHeading({ level: 2 }).run();
           }}
           className={cn(
             "p-2 rounded-lg",
-            editor.isActive("heading")
+            editor.isActive("heading", { level: 2 })
               ? "bg-sky-700 text-white"
               : "text-black/60"
           )}
         >
           <Heading2 className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 3 }).run()
+          }
+          className={cn(
+            "p-2 rounded-lg",
+            editor.isActive("heading", { level: 3 })
+              ? "bg-sky-700 text-white"
+              : "text-black/60"
+          )}
+        >
+          <Heading3 className="w-5 h-5" />
         </button>
 
         <button

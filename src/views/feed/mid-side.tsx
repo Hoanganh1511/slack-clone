@@ -1,3 +1,4 @@
+import ArticlesSection from "./articles-section";
 import ShareBox from "./share-box";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const MidSide = () => {
@@ -27,6 +28,9 @@ const MidSide = () => {
       </div>
       {/*  */}
       <ShareBox />
+      <div className="mt-4">
+        <ArticlesSection />
+      </div>
     </>
   );
 };

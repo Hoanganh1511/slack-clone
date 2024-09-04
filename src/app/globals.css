@@ -4,6 +4,8 @@
 
 @layer base {
   * {
+    margin: 0;
+    padding: 0;
   }
   body {
   }
@@ -40,33 +42,28 @@
 }
 
 /* Basic editor styles */
-.tiptap-parent {
-  /* List styles */
-  /* Heading styles */
-  /* Code and preformatted text styles */
-}
-.tiptap-parent :first-child {
-  margin-top: 0;
-}
+
 .tiptap-parent ul,
-.tiptap-parent ol {
+ol {
   padding: 0 1rem;
   margin: 1.25rem 1rem 1.25rem 0.4rem;
 }
 .tiptap-parent ul li p,
-.tiptap-parent ol li p {
+ol li p {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
 }
 .tiptap-parent h1,
-.tiptap-parent h2,
-.tiptap-parent h3,
-.tiptap-parent h4,
-.tiptap-parent h5,
-.tiptap-parent h6 {
-  line-height: 1.1;
-  margin-top: 2.5rem;
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: pretty;
+}
+.tiptap-parent h1 {
+  font-size: 24px;
+  line-height: 24px;
 }
 .tiptap-parent h1,
 .tiptap-parent h2 {
@@ -74,7 +71,7 @@
   margin-bottom: 1.5rem;
 }
 .tiptap-parent h1 {
-  font-size: 1.4rem;
+  font-size: 24px;
 }
 .tiptap-parent h2 {
   font-size: 1.2rem;
@@ -117,4 +114,60 @@
   border: none;
   border-top: 1px solid var(--gray-2);
   margin: 2rem 0;
+}
+
+.is-editor-empty:first-child::before {
+  color: rgba(0, 0, 0, 0.6);
+  /* font-weight: 700; */
+  font-size: 24px;
+  content: attr(data-placeholder);
+  pointer-events: none;
+}
+.is-empty::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.editor-tiptap {
+  /* Heading styles */
+}
+.editor-tiptap :first-child {
+  margin-top: 0;
+}
+.editor-tiptap h1,
+.editor-tiptap h2,
+.editor-tiptap h3,
+.editor-tiptap h4,
+.editor-tiptap h5,
+.editor-tiptap h6 {
+  line-height: 1.1;
+  margin-top: 2rem;
+  text-wrap: pretty;
+}
+.editor-tiptap h1,
+.editor-tiptap h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+.editor-tiptap h1 {
+  font-size: 1.8rem;
+}
+.editor-tiptap h2 {
+  font-size: 1.2rem;
+}
+.editor-tiptap h3 {
+  font-size: 1.1rem;
+}
+.editor-tiptap h4,
+.editor-tiptap h5,
+.editor-tiptap h6 {
+  font-size: 1rem;
+}
+
+.active-tab {
+  background-color: #01754f;
 }
